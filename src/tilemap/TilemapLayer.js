@@ -713,6 +713,11 @@ Object.defineProperty(Phaser.TilemapLayer.prototype, "scrollX", {
 
             this.dirty = true;
         }
+        // restore back to 0
+        else if(this._mc.x - value > 0)
+        {
+            this.scrollX = 0;
+        }
 
     }
 
@@ -752,6 +757,11 @@ Object.defineProperty(Phaser.TilemapLayer.prototype, "scrollY", {
             }
 
             this.dirty = true;
+        }
+         // restore back to 0
+        else if(this._mc.y - value > 0)
+        {
+            this.scrollY = 0;
         }
 
     }
