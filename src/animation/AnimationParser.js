@@ -46,9 +46,9 @@ Phaser.AnimationParser = {
         {
             frameHeight = Math.floor(-height / Math.min(-1, frameHeight));
         }
-
-        var row = Math.floor((width - margin) / (frameWidth + spacing));
-        var column = Math.floor((height - margin) / (frameHeight + spacing));
+        // add + spacing as total spacing = tiles in row * spacing - 1
+        var row = Math.floor((width - margin + spacing) / (frameWidth + spacing));
+        var column = Math.floor((height - margin + spacing) / (frameHeight + spacing));
         var total = row * column;
 
         if (frameMax !== -1)
